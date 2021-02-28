@@ -1,6 +1,15 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@layer components {
+  .btn {
+    @apply block bg-green-700 text-white text-sm font-semibold tracking-wide uppercase shadow rounded cursor-pointer px-6 py-3;
+  }
+  .btn--hover {
+    @apply bg-green-800;
+  }
+}
 
 .theme-light {
   --bg-background-primary: white;
@@ -24,7 +33,7 @@
 }
 
 .theme-dark .markdown-body {
-    color: #24292e;
+  color: #24292e;
 }
 
 .theme-dark .search-highlighted {
@@ -36,28 +45,28 @@
 }
 
 .theme-dark {
-  --bg-background-primary: #0D2438;
-  --bg-background-secondary: #102C44;
-  --bg-background-tertiary: #1E3951;
+  --bg-background-primary: #0d2438;
+  --bg-background-secondary: #102c44;
+  --bg-background-tertiary: #1e3951;
 
   --bg-background-form: #1a202c;
 
   --text-copy-primary: #cbd5e0;
   --text-copy-secondary: #e2e8f0;
 
-  --border-border-color-primary:  #1a202c;
+  --border-border-color-primary: #1a202c;
 }
 
 .theme-dark .markdown-body {
-    color: #cbd5e0;
+  color: #cbd5e0;
 }
 
 .theme-dark nav .nuxt-link-exact-active {
-    @apply border-white border-b;
+  @apply border-white border-b;
 }
 
 .content-wrapper {
-  transition: background-color .25s;
+  transition: background-color 0.25s;
 }
 
 a {

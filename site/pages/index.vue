@@ -76,8 +76,9 @@
 
 <script>
 import TheProjectSummary from "../components/TheProjectSummary";
+import AppButton from "../components/AppButton";
 export default {
-  components: { TheProjectSummary },
+  components: { TheProjectSummary, AppButton },
   data() {
     return {
       github: "https://github.com/hay-kot",

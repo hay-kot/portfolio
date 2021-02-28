@@ -2,65 +2,36 @@
 title: Introduction to Gridsome
 path: /introduction-to-gridsome
 date: 2019-04-08
-summary: Gridsome is a Vue.js-powered, modern site generator for building the fastest possible websites for any Headless CMS, APIs or Markdown-files. Gridsome makes it easy and fun for developers to create fast, beautiful websites without needing to become a performance expert.
+summary: Caddy is a simple, powerful, and extensible platform to serve your sites, services, and apps, written in Go. It's ability to split your SPA and API with a short and simple config makes it my favorite web-server for my projects. 
 tags: ['frontend', 'coding', 'vue']
+image: /caddy_v2.png
 ---
 
 ![background](/blog_bg_1.jpg)
 
-> Gridsome is a Vue.js-powered, modern site generator for building the fastest possible websites for any Headless CMS, APIs or Markdown-files. Gridsome makes it easy and fun for developers to create fast, beautiful websites without needing to become a performance expert.
+As part of my on going development for Mealie, a self hosted recipe manager, I needed to split the static files from the API to simplify deployment and get some clunky code out of the FastAPI backend. Instead of using the traditional Nginx configuration I decided to use a newer web server Caddy to handle requests. Even though Caddy is a fairly simple and easy to use web server I found it difficult to quickly determine the correct way to use both a SPA and an API backend served on subpaths in the uri. This is my quick guide on getting a server up and running to server your SPA and the API on the same domain. 
+Here's the final CaddyFile, we'll break it down below.
 
-### Why Gridsome?
+```
+{
+  auto_https off
+}
 
-- **Local development with hot-reloading** - See code changes in real-time.
-- **Data source plugins** - Use it for any popular Headless CMSs, APIs or Markdown-files.
-- **File-based page routing** - Quickly create and manage routes with files.
-- **Centralized data managment** - Pull data into a local, unified GraphQL data layer.
-- **Vue.js for frontend** - A lightweight and approachable front-end framework.
-- **Auto-optimized code** - Get code-splitting and asset optimization out-of-the-box.
-- **Static files generation** - Deploy securely to any CDN or static web host.
+:80 {
+  @proxied path /api/* /docs /openapi.json
 
-```js
-export default {
-  name: 'Card',
-  data () {
-    return {
-      message: 'Try change me!'
-    }
-  },
-  methods: {
-    onClick () {
-      this.message = 'Here you go :)'
-    }
+  root * /app/dist
+  encode gzip
+  uri strip_suffix /
+  
+  handle @proxied {
+    reverse_proxy http://127.0.0.1:9000 
   }
+
+  handle {
+    try_files {path}.html {path} /
+    file_server 
+  }
+
 }
 ```
-
-
-### Prerequisites
-You should have basic knowledge about HTML, CSS, [Vue.js](https://vuejs.org) and how to use the [Terminal](https://www.linode.com/docs/tools-reference/tools/using-the-terminal/). Knowing how [Vue Single File components](https://vuejs.org/v2/guide/single-file-components.html) & [GraphQL](https://www.graphql.com/) works is a plus, but not required. Gridsome is a great way to learn both.
-
-Gridsome requires **Node.js** and recommends **Yarn**.
-
-![background](/background.jpg)
-
-### 1. Install Gridsome CLI tool
-
-Using yarn:
-`yarn global add @gridsome/cli`
-
-Using npm:
-`npm install --global @gridsome/cli`
-
-### 2. Create a Gridsome project
-
-1. `gridsome create my-gridsome-site` to create a new project </li>
-2. `cd my-gridsome-site` to open folder
-3. `gridsome develop` to start local dev server at `http://localhost:8080`
-4. Happy coding 🎉🙌
-
-### 3. Next steps 123
-
-1. Create `.vue` components in the `/pages` directory to create page routes.
-2. Use `gridsome build` to generate static files in a `/dist` folder
-

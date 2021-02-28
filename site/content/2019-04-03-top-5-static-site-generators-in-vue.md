@@ -4,6 +4,7 @@ path: /top-5-static-site-generators-in-vue
 date: 2019-04-03
 summary: Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic rerum earum quos explicabo suscipit maxime iste qui nihil. Reiciendis asperiores minus necessitatibus
 tags: ['frontend', 'coding', 'vue']
+image: /blog_bg_1.jpg
 ---
 
 ![background](/blog_bg_3.jpg)

@@ -16,32 +16,30 @@
 
       <ul class="text-lg sm:text-xl space-y-6">
         <li class="checkmark">
-          <div>Project One</div>
+          <div>Mealie</div>
           <div class="text-lg text-gray-600">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui ab nam
-            animi iure nemo exercitationem a, eius non culpa itaque!
-          </div>
-          <button>Hello Button</button>
-        </li>
-        <li class="checkmark">
-          <div>Project Two</div>
-          <div class="text-lg text-gray-600">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui ab nam
-            animi iure nemo exercitationem a, eius non culpa itaque!
+            A self-hosted recipe manager built with Vue and Python
           </div>
         </li>
         <li class="checkmark">
-          <div>Project Three</div>
+          <div>Visio2PDF</div>
           <div class="text-lg text-gray-600">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui ab nam
-            animi iure nemo exercitationem a, eius non culpa itaque!
+            A App wrapper around the CLI tool for converting Visio documents
+            into PDFs with merge, title page, and bookmarks built-in.
           </div>
         </li>
         <li class="checkmark">
-          <div>Project Four</div>
+          <div>ControlsCoPilot</div>
           <div class="text-lg text-gray-600">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui ab nam
-            animi iure nemo exercitationem a, eius non culpa itaque!
+            A line of business application built for Johnson Controls tooling
+            for automating daily workflows for system technicians and engineers.
+          </div>
+        </li>
+        <li class="checkmark">
+          <div>Quick Zip (Beta)</div>
+          <div class="text-lg text-gray-600">
+            A CLI interface for creating and scheduling zip file backups of
+            system documents
           </div>
         </li>
       </ul>
