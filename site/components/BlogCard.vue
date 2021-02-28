@@ -1,12 +1,12 @@
 <template>
-  <div class="w-full">
+  <div class="w-full h-full">
     <div
-      class="h-48 flex-none bg-cover rounded-t text-center overflow-hidden items-stretch"
+      class="h-48 flex-none bg-cover rounded-t"
       :style="`background-image: url(${image})`"
       title="River"
     ></div>
     <div
-      class="bg-background-primary border-r border-l border-b border-green-900 lg:border-green-900 rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal items-stretch"
+      class="bg-background-primary border-r border-l border-b border-green-900 lg:border-green-900 rounded-b lg:rounded-b-none p-4"
     >
       <div class="mb-8">
         <h2 class="text-3xl font-bold">

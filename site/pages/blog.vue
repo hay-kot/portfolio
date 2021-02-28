@@ -1,19 +1,21 @@
 <template>
-  <div
-    class="container mx-auto p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-10 items-stretch"
-  >
-    <div v-for="(post, index) in posts" :key="index" class="post mb-12">
-      <BlogCard
-        :slug="post.slug"
-        :title="post.title"
-        :summary="post.summary"
-        :date="formatDate(post.date)"
-        :image="post.image"
-      />
+  <div>
+    <div
+      class="container mx-auto p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 items-stretch"
+    >
+      <div v-for="(post, index) in posts" :key="index" class="post h-full mb-12">
+        <BlogCard
+          :slug="post.slug"
+          :title="post.title"
+          :summary="post.summary"
+          :date="formatDate(post.date)"
+          :image="post.image"
+        />
+      </div>
+      <!-- end post -->
     </div>
-    <!-- end post -->
 
-    <div class="flex justify-between text-xl items-center">
+    <div class="flex justify-center align-center text-xl items-center mb-3">
       <a
         :href="previousPage"
         :class="{
@@ -21,7 +23,9 @@
         }"
         >&larr; Prev</a
       >
-      <div class="text-base">Page {{ currentPage }} of {{ totalPages }}</div>
+      <div class="text-base mx-10">
+        Page {{ currentPage }} of {{ totalPages }}
+      </div>
       <a
         :href="nextPage"
         :class="{
