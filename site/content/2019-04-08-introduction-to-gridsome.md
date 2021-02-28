@@ -59,7 +59,7 @@ Using npm:
 3. `gridsome develop` to start local dev server at `http://localhost:8080`
 4. Happy coding 🎉🙌
 
-### 3. Next steps
+### 3. Next steps 123
 
 1. Create `.vue` components in the `/pages` directory to create page routes.
 2. Use `gridsome build` to generate static files in a `/dist` folder
