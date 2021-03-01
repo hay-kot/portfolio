@@ -6,6 +6,11 @@ My portfolio based on the [Gridsome Portfolio Starter](https://github.com/drehim
 
 ## Todo (already done in Gridsome version)
 
+Top Priority
+- Copy over Images
+- Image Optimization
+- Fix Domain Issues
+
 - Tags for posts
 - Search posts with [Fuse.js](https://fusejs.io) and [vue-fuse](https://github.com/shayneo/vue-fuse)
 - Response Pagination for blog posts
