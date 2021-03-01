@@ -11,3 +11,5 @@ WORKDIR /app
 COPY ./Caddyfile /etc/caddy/Caddyfile
 COPY site /srv
 COPY --from=build-stage /app/dist /srv
+
+# Rename
