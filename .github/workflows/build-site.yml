@@ -16,6 +16,5 @@ jobs:
             mkdir ~/docker/portfolio -p
             cd ~/docker/portfolio
             git clone https://github.com/hay-kot/portfolio .
-            docker build -t portfolio -f ./DockerFile .
-            docker run --name portfolio -d portfolio
+            docker-compose up -d
 # Test Another

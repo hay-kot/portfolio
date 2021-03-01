@@ -3,10 +3,11 @@ version: "3.1"
 services:
   # Vue Frontend
   portfolio-test-build:
-    image: nuxt-portfolio:dev
+    image: portfolio:latest
+    container_name: portfolio
+    networks:
+      - web
     build:
       context: ./
       dockerfile: DockerFile
     restart: always
-    ports:
-      - 9959:80
