@@ -3,7 +3,7 @@
 }
 
 :80 {
-  root * /srv/dist
+  root * /srv
   encode gzip
   uri strip_suffix /
 

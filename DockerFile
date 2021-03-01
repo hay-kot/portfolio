@@ -6,7 +6,7 @@ COPY ./site/ .
 RUN npm run build
 RUN npm run generate
 
-FROM caddy:latest
+FROM caddy:alpine
 WORKDIR /app
 COPY ./Caddyfile /etc/caddy/Caddyfile
 COPY site /srv
