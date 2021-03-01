@@ -10,8 +10,8 @@ from markdownify import markdownify as md
 CWD = Path(__file__).parent
 DEST = CWD.joinpath("dest")
 
-API_KEY = "be6bc60a4d832f5a46d6dec44f"
-API_URL = "https://blog.hay-kot.dev/ghost/api/v3/content/posts/"
+API_KEY = ""
+API_URL = ""
 POST_TEMPLATE = CWD.joinpath("post-template.j2")
 
 
