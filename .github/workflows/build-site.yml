@@ -15,7 +15,7 @@ jobs:
           script: |
             mkdir ~/docker/portfolio -p
             cd ~/docker/portfolio
-            git clone https://github.com/hay-kot/portfolio .
+            git pull
             docker-compose up --build -d
 
 # Test Another
