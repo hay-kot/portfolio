@@ -3,6 +3,19 @@
     class="content-wrapper bg-background-primary font-sans text-copy-primary leading-normal flex flex-col min-h-screen"
     :class="theme"
   >
+    <script
+      data-name="BMC-Widget"
+      data-cfasync="false"
+      src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
+      data-id="haykot"
+      data-description="Support me on Buy me a coffee!"
+      data-message=""
+      data-color="#40DCA5"
+      data-position="Right"
+      data-x_margin="18"
+      data-y_margin="18"
+    ></script>
+
     <header class="border-t-14 border-green-700">
       <nav
         class="container mx-auto flex flex-wrap justify-between items-center py-8"
@@ -227,6 +240,8 @@ export default {
   },
 };
 </script>
+
+
 
 <style>
 </style>
