@@ -19,9 +19,10 @@
 
     <div class="container-inner mx-auto">
       <p class="text-lg sm:text-xl">
-        You can find my
-        <a :href="github"> GitHub repo here</a>. In additiona to Github you can
-        find my personal blog at <a :href="blog"> blog.hay-kot.dev</a>.
+        Welcome to the site! It's currently under contruction so not to be too
+        harsh! You can find my
+        <a :href="github"> GitHub here</a>. Checkout out my blog for more
+        details on what kind of stuff I'm into
       </p>
 
       <div class="flex justify-between items-center py-6">
@@ -29,7 +30,7 @@
           <img src="~assets/img/mind_map.svg" alt="browser" />
         </div>
         <div class="w-1/2 px-8 hidden sm:flex justify-end">
-          <img src="~assets/img/code_review.svg" alt="mobile" />
+          <img src="~assets/img/web-developer.svg" alt="mobile" />
         </div>
       </div>
     </div>
@@ -56,7 +57,7 @@
         >
           <div>
             <img
-              src="~assets/img/avatar.jpg"
+              src="~assets/img/avatar.svg"
               alt="avatar"
               class="w-32 h-32 rounded-full mb-8 lg:mb-0"
             />

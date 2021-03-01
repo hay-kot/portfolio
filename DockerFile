@@ -1,0 +1,13 @@
+FROM node:lts-alpine as build-stage
+WORKDIR /app
+COPY ./site/package*.json ./
+RUN npm install
+COPY ./site/ .
+RUN npm run build
+RUN npm run generate
+
+FROM caddy:latest
+WORKDIR /app
+COPY ./Caddyfile /etc/caddy/Caddyfile
+COPY site /srv
+COPY --from=build-stage /app/dist /srv

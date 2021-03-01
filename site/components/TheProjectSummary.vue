@@ -24,7 +24,7 @@
         <li class="checkmark">
           <div>Visio2PDF</div>
           <div class="text-lg text-gray-600">
-            A App wrapper around the CLI tool for converting Visio documents
+            A Web App wrapper around the CLI tool for converting Visio documents
             into PDFs with merge, title page, and bookmarks built-in.
           </div>
         </li>

@@ -1,12 +1,12 @@
 <template>
   <div class="w-full h-full">
-    <div
-      class="h-48 flex-none bg-cover rounded-t"
-      :style="`background-image: url(${image})`"
+    <img
+      class="h-48 flex-none bg-cover rounded-t mx-auto object-fill"
+      :src="image"
       title="River"
-    ></div>
+    />
     <div
-      class="bg-background-primary border-r border-l border-b border-green-900 lg:border-green-900 rounded-b lg:rounded-b-none p-4"
+      class="bg-background-primary border-green-900 rounded-b lg:rounded-b-none p-4"
     >
       <div class="mb-8">
         <h2 class="text-3xl font-bold">
@@ -21,7 +21,7 @@
       <div class="flex">
         <img
           class="w-10 h-10 rounded-full mr-4"
-          src="~assets/img/avatar.jpg"
+          src="~assets/img/avatar.svg"
           alt="Avatar of Writer"
         />
         <div class="text-sm">

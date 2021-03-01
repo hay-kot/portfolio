@@ -1,0 +1,15 @@
+{
+  auto_https off
+}
+
+:80 {
+  root * /srv/dist
+  encode gzip
+  uri strip_suffix /
+
+  handle {
+    try_files {path}.html {path} /
+    file_server 
+  }
+
+}
