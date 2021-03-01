@@ -5,7 +5,7 @@ date: 2021-01-05T06:13:31.000+00:00
 summary: Adding SSH logging to Home Assistant is super easy to do and can offer a tiny sliver of reassurance that your whole system isn't burning down by an unauthorized user.
 reading_time: 
 tags: ['frontend', 'coding', 'vue']
-image: https://blog.hay-kot.dev/content/images/2021/01/home_assistant_ssh.png
+image: /home-assistant-ssh/home-assistant-ssh.png
 ---
 
 [Home Assistant](https://www.home-assistant.io/) is best described by the project themselves
@@ -24,7 +24,9 @@ We'll be using a webhook to receive data from the server on Home Assistant. To d
 
  With Node-Red you'll need to create a webhook node and generate a random URL (save this for later). Connect that to a JSON block to process the posted data into a JavaScript object and optionally pass that through a Change Node to set the Topic, and a Delay Node to limit the messages. Finally you need to map the actually value to an Entity Node. We'll be using the payload.message object to hold the entity sensor value. 
 
-![](https://blog.hay-kot.dev/content/images/2021/01/flow-Example-1.png)Flow Example![](https://blog.hay-kot.dev/content/images/2021/01/ssh_entity_node_config.png)
+![](/home-assistant-ssh/flow-Example-1.png)
+
+![](/home-assistant-ssh/ssh-entity-node-config.png)
 ```
 Entity Payload[{"id":"ac17221d.ca7b4","type":"ha-webhook","z":"bee214af.688e28","name":"SSH Notification Webhook","server":"15e97f32.f16891","outputs":1,"webhookId":"MY-SSH-WEBHOOK","payloadLocation":"payload","payloadLocationType":"msg","headersLocation":"","headersLocationType":"none","x":130,"y":400,"wires":[["6812e653.224d68"]]},{"id":"38588fad.38fd88","type":"ha-entity","z":"bee214af.688e28","name":"SSH Entity","server":"15e97f32.f16891","version":1,"debugenabled":false,"outputs":1,"entityType":"sensor","config":[{"property":"name","value":"SSH Login"},{"property":"device\_class","value":""},{"property":"icon","value":""},{"property":"unit\_of\_measurement","value":""}],"state":"payload.message","stateType":"msg","attributes":[],"resend":true,"outputLocation":"","outputLocationType":"none","inputOverride":"allow","x":750,"y":400,"wires":[[]]},{"id":"78b836a5.441e78","type":"delay","z":"bee214af.688e28","name":"","pauseType":"rate","timeout":"5","timeoutUnits":"seconds","rate":"1","nbRateUnits":"1","rateUnits":"minute","randomFirst":"1","randomLast":"5","randomUnits":"seconds","drop":true,"x":530,"y":400,"wires":[["38588fad.38fd88"]]},{"id":"6812e653.224d68","type":"json","z":"bee214af.688e28","name":"","property":"payload","action":"obj","pretty":false,"x":290,"y":400,"wires":[["78b836a5.441e78","b22a904e.f459"]]},{"id":"b22a904e.f459","type":"change","z":"bee214af.688e28","name":"Set Topic","rules":[{"t":"move","p":"payload.topic","pt":"msg","to":"topic","tot":"msg"}],"action":"","property":"","from":"","to":"","reg":false,"x":400,"y":400,"wires":[["78b836a5.441e78"]]},{"id":"15e97f32.f16891","type":"server","name":"Home Assistant"}]Code SampleOn The Server
 ```
@@ -61,9 +63,12 @@ Setting up the Card
 
 Thanks to the Logbook Card, setup is easy and can be done from the UI. Edit the Lovelace dashboard you'd like to add the card to. Select Add Card and choose the Logbook Card. There you can select the sensor you created in the previous step, how many hours to show, and some other configuration information. 
 
+```yml
 type: logbook
 entities:
- - sensor.ssh\_login
-hours\_to\_show: 24
-![](https://blog.hay-kot.dev/content/images/2021/01/ssh_log-1.png)Adding SSH logging to Home Assistant is super easy to do and can offer a tiny sliver of reassurance that your whole system isn't burning down by an unauthorized user.
+ - sensor.ssh_login
+hours_to_show: 24
+```
+
+![](/home-assistant-ssh/ssh-log-1.png)Adding SSH logging to Home Assistant is super easy to do and can offer a tiny sliver of reassurance that your whole system isn't burning down by an unauthorized user.
 
