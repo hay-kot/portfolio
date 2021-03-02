@@ -20,12 +20,12 @@ The Article Processor does the following:
 
 ## Todo 
 
-Top Priority
 - [x] Metadata/FrontMatter Generator
 - [x] Copy over Images
 - [x] Image Optimization
 - [x] Fix Domain Issues
-
+- [ ] Indicate Read Time for Posts
+- [ ] Custom Markdown Elements
 - [ ] Tags for posts
 - [ ] Search posts with [Fuse.js](https://fusejs.io) and [vue-fuse](https://github.com/shayneo/vue-fuse)
 - [ ] Response Pagination for blog posts
