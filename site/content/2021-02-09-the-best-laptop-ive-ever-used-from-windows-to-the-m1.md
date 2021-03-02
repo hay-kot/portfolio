@@ -8,15 +8,6 @@ tags: ['frontend', 'coding', 'vue']
 image: https://images.unsplash.com/photo-1537498425277-c283d32ef9db?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxMTc3M3wwfDF8c2VhcmNofDF8fG1hY2Jvb2t8ZW58MHx8fA&ixlib=rb-1.2.1&q=80&w=2000
 ---
 
-<br>
-
-<test-component title="My Title ">
-
-To my surprise, the experience of installing and updating applications felt very...linux-like? I was able to use [brew](https://brew.sh/) as a package manager with cask right out of the box, no rosetta nonsense. I opened terminal installed brew and away I went. The overall performance of applications was also a surprise.
-
-</test-component>
-
-----
 
 As a long time, diehard Windows fan it slightly pains me to say that the M1 MacBook Air is by far the greatest laptop I've ever used. Over the past few weeks I've scoured the internet to find the perfect laptop for traveling and light development. I adamantly refused to buy into the MacOS ecosystem as I was raised by a diehard windows administrator. After weeks of being undecided I finally caved and took the plunge into the MacBook Air and boy oh boy was I wrong.
 
