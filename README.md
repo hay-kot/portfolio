@@ -1,12 +1,27 @@
 # Nuxt Portfolio Starter
 
 My portfolio based on the [Gridsome Portfolio Starter](https://github.com/drehimself/gridsome-portfolio-starter).
+## Article Processor
 
-![screenshot](https://user-images.githubusercontent.com/4316355/89967318-2a4ce200-dc1f-11ea-86e9-2e3dc1d52a2d.jpg)
+The Article Processor built in python, scans the drafts folder for drafts containing the `publish: true`. Any post containing `publish true` will be processed and imported into **Nuxt** for deployment. 
 
-## Todo (already done in Gridsome version)
+The Article Processor does the following: 
+
+- Sets Metadata
+  - slug: `slugify(title)`
+  - path: `/{slug}`
+  - date: `datetime.now()`
+  - reading_time: `total_words += len(content_text) / 5`
+  - image: transforms `./image.png` -> `/{slug}/image.png`
+- Sets Image URLs in markdown from `./image.png` -> `/{slug}/image.png`
+- Sets markdown file name to `YYYY-MM-DD-{slug}.md`
+- Copies markdown file to `site/content`
+- Copies non-markdown files to `site/static/{slug}/`
+
+## Todo 
 
 Top Priority
+- [x] Metadata/FrontMatter Generator
 - [x] Copy over Images
 - [ ] Image Optimization
 - [ ] Fix Domain Issues
@@ -14,10 +29,3 @@ Top Priority
 - [ ] Tags for posts
 - [ ] Search posts with [Fuse.js](https://fusejs.io) and [vue-fuse](https://github.com/shayneo/vue-fuse)
 - [ ] Response Pagination for blog posts
-
-## Installation
-
-1. Clone the repo and `cd` into it.
-1. `npm install`
-1. `npm run dev` to start a local dev server.
-1. `npm run generate` to build a static site.

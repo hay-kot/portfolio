@@ -10,7 +10,7 @@
       data-id="haykot"
       data-description="Support me on Buy me a coffee!"
       data-message=""
-      data-color="#40DCA5"
+      data-color="#2F8559"
       data-position="Right"
       data-x_margin="18"
       data-y_margin="18"
@@ -212,6 +212,7 @@
 </template>
 
 <script>
+import { contact } from "~/globals";
 import ThemeSwitcher from "~/components/ThemeSwitcher.vue";
 
 export default {
@@ -225,9 +226,9 @@ export default {
     return {
       isOpen: false,
       theme: "",
-      email: "hay-kot@pm.me",
-      github: "https://github.com/hay-kot",
-      twitter: "https://twitter.com/kot_hay",
+      email: contact.email,
+      github: contact.github,
+      twitter: contact.twitter,
     };
   },
   methods: {
