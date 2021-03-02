@@ -1,4 +1,4 @@
-FROM node:lts-alpine as build-stage
+FROM node as build-stage
 WORKDIR /app
 COPY ./site/package*.json ./
 RUN npm install
@@ -11,5 +11,3 @@ WORKDIR /app
 COPY ./Caddyfile /etc/caddy/Caddyfile
 COPY site /srv
 COPY --from=build-stage /app/dist /srv
-
-# Rename
