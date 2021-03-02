@@ -27,7 +27,11 @@ export default {
 
   components: true,
 
-  buildModules: ["@nuxtjs/tailwindcss"],
+  buildModules: ["@nuxtjs/tailwindcss", "@aceforth/nuxt-optimized-images"],
+
+  optimizedImages: {
+    optimizeImages: true
+  },
 
   modules: [
     "@nuxtjs/axios",

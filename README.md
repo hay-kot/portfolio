@@ -23,8 +23,8 @@ The Article Processor does the following:
 Top Priority
 - [x] Metadata/FrontMatter Generator
 - [x] Copy over Images
-- [ ] Image Optimization
-- [ ] Fix Domain Issues
+- [x] Image Optimization
+- [x] Fix Domain Issues
 
 - [ ] Tags for posts
 - [ ] Search posts with [Fuse.js](https://fusejs.io) and [vue-fuse](https://github.com/shayneo/vue-fuse)
