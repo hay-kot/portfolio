@@ -10,6 +10,8 @@
           :summary="post.summary"
           :date="formatDate(post.date)"
           :image="post.image"
+          :tags="post.tags"
+          :reading-time="post.reading_time"
         />
       </div>
 
@@ -21,8 +23,9 @@
         :class="{
           'text-gray-400 hover:text-gray-400 cursor-not-allowed': !showPreviousPage,
         }"
-        >&larr; Prev</a
       >
+        &larr; Prev
+      </a>
       <div class="text-base mx-10">
         Page {{ currentPage }} of {{ totalPages }}
       </div>
@@ -31,8 +34,9 @@
         :class="{
           'text-gray-400 hover:text-gray-400 cursor-not-allowed': !showNextPage,
         }"
-        >Next &rarr;</a
       >
+        Next &rarr;
+      </a>
     </div>
   </div>
 </template>
@@ -57,7 +61,8 @@ export default {
     };
   },
   computed: {
-    pagination() { // ! Why Doesn't This Work? 
+    pagination() {
+      // ! Why Doesn't This Work?
       switch (this.windowWidth) {
         case this.windowWidth <= this.smBreakpoint:
           return 4;
@@ -100,16 +105,14 @@ export default {
   },
   methods: {
     updateWindowSize() {
-      console.log("Update Window Size");
       this.windowWidth = window.innerWidth;
     },
     formatDate(dateToFormat) {
-      return format(new Date(dateToFormat), "MMMM d, Y");
+      return format(new Date(dateToFormat), "MMM d, Y");
     },
   },
   async fetch() {
     this.allPosts = await this.$content().fetch();
-    console.log(this.allPosts);
 
     this.currentPage = parseInt(this.$route.query.page)
       ? parseInt(this.$route.query.page)

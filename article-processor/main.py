@@ -25,7 +25,7 @@ def estimate_reading_time(text):
     for current_text in text:
         total_words += len(current_text) / WORD_LENGTH
     total_time = round((total_words / WPM))
-    return f"{total_time} minutes"
+    return f"{total_time} Minute Read"
 
 
 def set_destination(article: Article) -> Path:

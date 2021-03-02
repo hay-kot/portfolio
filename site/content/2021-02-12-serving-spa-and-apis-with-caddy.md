@@ -4,7 +4,7 @@ path: /serving-spa-and-apis-with-caddy
 date: 2021-02-13T03:27:05.000+00:00
 summary: Caddy is a simple, powerful, and extensible platform to serve your sites, services, and apps, written in Go. It's ability to split your SPA and API with a short and simple config makes it my favorite web-server for my projects. 
 reading_time: 
-tags: ['frontend', 'coding', 'vue']
+tags: ['coding', 'vue', 'python']
 image: /serving-spa-and-apis-with-caddy.png
 ---
 

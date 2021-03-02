@@ -3,8 +3,8 @@ title: Using Python to Generate Blog Frontmatter
 path: /using-python-to-generate-blog-frontmatter
 date: 2021-03-01 21:26:44.321198
 summary: Using jinja2 templating as base, I was able to use python to create metadata for my blog posts and automate some of the boring parts about moving from a draft to published post
-reading_time: 3 minutes
-tags: ['code', 'blogging', 'automation']
+reading_time: 3 Minute Read
+tags: ['coding', 'blogging', 'automation']
 image: /using-python-to-generate-blog-frontmatter/header.png
 ---
 
