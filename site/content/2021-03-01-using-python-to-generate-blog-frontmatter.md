@@ -1,14 +1,14 @@
 ---
-# When Publish is set to true the article will be processed
-publish: true
-title: "Using Python to Generate Blog Frontmatter"
-summary: "Using jinja2 templating as base, I was able to use python to create metadata for my blog posts and automate some of the boring parts about moving from a draft to published post"
+title: Using Python to Generate Blog Frontmatter
+path: /using-python-to-generate-blog-frontmatter
+date: 2021-03-01 21:26:44.321198
+summary: Using jinja2 templating as base, I was able to use python to create metadata for my blog posts and automate some of the boring parts about moving from a draft to published post
+reading_time: 3 minutes
 tags: ['code', 'blogging', 'automation']
-# Urls will be downloaded and inserted into the static folder
-image: "./header.png"
+image: /using-python-to-generate-blog-frontmatter/header.png
 ---
 
-![Test Image](./header.png)
+![Test Image](/using-python-to-generate-blog-frontmatter/header.png)
 
 I recently began the process of migrating my small blog from Ghost to a static site build with Nuxt. As apart of the process I wanted to create a small script that would automate some of the basic metadata creation the Nuxt can use to generate cards and sort content. Luckily, frontmatter in markdown is just yaml, making it easy to parse and manipulate. 
 
