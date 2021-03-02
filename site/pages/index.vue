@@ -21,8 +21,9 @@
       <p class="text-lg sm:text-xl">
         Welcome to the site! It's currently under contruction so not to be too
         harsh! You can find my
-        <a :href="github"> GitHub here</a>. Checkout out my blog for more
-        details on what kind of stuff I'm into
+        <a :href="github"> GitHub here</a>. Checkout out my
+        <nuxt-link to="/blog"> blog </nuxt-link>
+        for more details on what kind of stuff I'm into
       </p>
 
       <div class="flex justify-between items-center py-6">
