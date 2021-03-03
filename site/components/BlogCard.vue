@@ -9,11 +9,14 @@
       class="bg-background-primary border-green-900 rounded-b lg:rounded-b-none p-4"
     >
       <div class="mb-4">
-        <h2 class="text-3xl font-bold">
+        <h2 class="text-2xl font-bold">
           <nuxt-link :to="`/posts/${slug}`" class="text-copy-primary">
             {{ title }}
           </nuxt-link>
         </h2>
+        <p class="text-gray-600" v-if="readingTime">
+          {{ readingTime }}
+        </p>
         <div class="flex text-sm mb-1">
           <TagButton
             v-for="(tag, index) in tags.slice(0, 3)"
@@ -36,9 +39,6 @@
         <div class="text-sm">
           <p class="text-gray-500 leading-none">{{ author }}</p>
           <p class="text-gray-600">{{ date }}</p>
-          <p class="text-gray-600 leading-none" v-if="readingTime">
-            {{ readingTime }}
-          </p>
         </div>
         <div class="ml-auto mt-auto">
           <nuxt-link :to="`/posts/${slug}`" class="font-bold uppercase">

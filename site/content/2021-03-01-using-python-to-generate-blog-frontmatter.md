@@ -1,6 +1,6 @@
 ---
-title: Using Python to Generate Blog Frontmatter
-path: /using-python-to-generate-blog-frontmatter
+title: Generating Blog Frontmatter
+path: /generate-blog-frontmatter
 date: 2021-03-01 21:26:44.321198
 summary: Using jinja2 templating as base, I was able to use python to create metadata for my blog posts and automate some of the boring parts about moving from a draft to published post
 reading_time: 3 Minute Read
@@ -77,11 +77,11 @@ Now that the data has been defined, there are a few actions that need to be perf
 Once an article to be published is found, the script will do the following
 
 ### Set Frontmatter
-**slug:** Uses the python-slugify package to create a slug for the post with `slugify(title)`
-**path:** defines the path URL for next as `/{slug}`
-**Date:** Adds a published date the file with `datetime.now()`
-**reading_time:** Creates a basic read time from the following equation `total_words += len(content_text) / 5`
-**image:** transforms `./image.png` -> `/{slug}/image.png` for Nuxt to know where to find the images in the post
+- **slug:** Uses the python-slugify package to create a slug for the post with `slugify(title)`
+- **path:** defines the path URL for next as `/{slug}`
+- **Date:** Adds a published date the file with `datetime.now()`
+- **reading_time:** Creates a basic read time from the following equation `total_words += len(content_text) / 5`
+- **image:** transforms `./image.png` -> `/{slug}/image.png` for Nuxt to know where to find the images in the post
 
 ### Additional Processing
 - Sets Image URLs in markdown from `./image.png` -> `/{slug}/image.png`
