@@ -227,7 +227,7 @@ export default {
       isOpen: false,
       theme: "",
       email: contact.email,
-      github: contact.github,
+      github: contact.portfolio,
       twitter: contact.twitter,
     };
   },

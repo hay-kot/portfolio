@@ -16,13 +16,27 @@
 
       <ul class="text-lg sm:text-xl space-y-6">
         <li class="checkmark">
-          <div>Mealie</div>
+          <div class="flex pr-6">
+            <div>Mealie</div>
+            <p class="ml-auto">
+              <a :href="mealieDocs">Docs</a> ·
+              <a :href="mealie">Source Code</a>
+            </p>
+          </div>
           <div class="text-lg text-gray-600">
-            A self-hosted recipe manager built with Vue and Python
+            a self hosted recipe manager and meal planner with a RestAPI backend
+            and a reactive frontend application built in Vue for a pleasant user
+            experience for the whole family.
           </div>
         </li>
         <li class="checkmark">
-          <div>Visio2PDF</div>
+          <div class="flex pr-6">
+            <div>Visio2PDF</div>
+
+            <p class="ml-auto">
+              <a :href="visio2PDF">Source Code</a>
+            </p>
+          </div>
           <div class="text-lg text-gray-600">
             A Web App wrapper around the CLI tool for converting Visio documents
             into PDFs with merge, title page, and bookmarks built-in.
@@ -49,9 +63,14 @@
 </template>
 
 <script>
+import { projects } from "../globals";
 export default {
   data() {
-    return {};
+    return {
+      mealie: projects.mealie,
+      mealieDocs: projects.mealieDocs,
+      visio2PDF: projects.visio2PDF,
+    };
   },
 };
 </script>

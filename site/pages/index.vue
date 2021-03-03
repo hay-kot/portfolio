@@ -79,12 +79,14 @@
 <script>
 import TheProjectSummary from "../components/TheProjectSummary";
 import AppButton from "../components/AppButton";
+import { contact } from "../globals";
 export default {
   components: { TheProjectSummary, AppButton },
   data() {
     return {
-      github: "https://github.com/hay-kot",
-      blog: "https://blog.hay-kot.dev",
+      github: contact.github,
+      blog: contact.blog,
+
     };
   },
 };
