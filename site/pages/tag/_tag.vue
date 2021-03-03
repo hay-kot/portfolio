@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="text-lg ml-10 uppercase font-bold text-green-700">
+    <div class="container mx-auto text-lg uppercase font-bold text-green-700">
       {{ tag }}
     </div>
     <div
