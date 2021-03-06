@@ -26,12 +26,22 @@
         for more details on what kind of stuff I'm into
       </p>
 
-      <div class="flex justify-between items-center py-6">
-        <div class="w-full sm:w-1/2 px-8 py-8 sm:py-0">
-          <img src="~assets/img/mind_map.svg" alt="browser" />
+      <div class="flex flex-col sm:flex-row items-center my-8">
+        <div class="w-1/3">
+          <img
+            src="~assets/img/server.svg"
+            alt="avatar"
+            class="transform scale-75 rounded mb-8 lg:mb-0"
+          />
         </div>
-        <div class="w-1/2 px-8 hidden sm:flex justify-end">
-          <img src="~assets/img/web-developer.svg" alt="mobile" />
+        <div class="flex-1 text-lg sm:text-xl ml-6">
+          <p class="text-lg sm:text-xl">
+            I've spent the last two years building a local infrastructure of
+            services to provide a private and conveint suite of tools and
+            applications my wife and I to use. To learn more about what I'm hosting,
+            check out my
+            <a href="https://wiki.hay-kot.dev">wiki.</a>
+          </p>
         </div>
       </div>
     </div>
@@ -86,7 +96,6 @@ export default {
     return {
       github: contact.github,
       blog: contact.blog,
-
     };
   },
 };

@@ -97,24 +97,16 @@
           </li>
           <li>
             <a
-              v-if="$route.path === '/'"
-              href="/#contact"
-              v-scroll-to="'#contact'"
+              href="https://wiki.hay-kot.dev"
               class="text-copy-primary hover:text-gray-600"
-              >Contact</a
             >
-            <nuxt-link
-              v-else
-              to="/#contact"
-              v-scroll-to="'/#contact'"
-              class="text-copy-primary hover:text-gray-600"
-              >Contact</nuxt-link
-            >
+              Wiki
+            </a>
           </li>
           <li>
-            <nuxt-link to="/blog" class="text-copy-primary hover:text-gray-600"
-              >Blog</nuxt-link
-            >
+            <nuxt-link to="/blog" class="text-copy-primary hover:text-gray-600">
+              Blog
+            </nuxt-link>
             <!-- <g-link to="/blog" class="text-copy-primary hover:text-gray-600">Blog</g-link> -->
           </li>
         </ul>
