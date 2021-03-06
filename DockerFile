@@ -1,13 +1,14 @@
 FROM node as build-stage
 WORKDIR /app
 COPY ./site/package*.json ./
-RUN npm install
+RUN yarn install
 COPY ./site/ .
-RUN npm run build
-RUN npm run generate
+RUN yarn run build
+RUN yarn run generate
 
 FROM caddy:alpine
 WORKDIR /app
 COPY ./Caddyfile /etc/caddy/Caddyfile
 COPY site /srv
 COPY --from=build-stage /app/dist /srv
+#TEST
