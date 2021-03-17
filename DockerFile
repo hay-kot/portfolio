@@ -1,14 +1,9 @@
-FROM node as build-stage
+FROM node:latest
+ENV HOST 0.0.0.0
+EXPOSE 80
 WORKDIR /app
 COPY ./site/package*.json ./
 RUN yarn install
 COPY ./site/ .
-RUN yarn run build
 RUN yarn run generate
-
-FROM caddy:alpine
-WORKDIR /app
-COPY ./Caddyfile /etc/caddy/Caddyfile
-COPY site /srv
-COPY --from=build-stage /app/dist /srv
-#TEST
+CMD [ "yarn", "start", "-p", "80" ]

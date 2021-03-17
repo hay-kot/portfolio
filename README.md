@@ -27,8 +27,8 @@ The Article Processor does the following:
 - [x] Copy over Images
 - [x] Image Optimization
 - [x] Fix Domain Issues
-- [ ] Indicate Read Time for Posts
+- [x] Indicate Read Time for Posts
 - [ ] Custom Markdown Elements
-- [ ] Tags for posts
+- [x] Tags for posts
 - [ ] Search posts with [Fuse.js](https://fusejs.io) and [vue-fuse](https://github.com/shayneo/vue-fuse)
 - [ ] Response Pagination for blog posts

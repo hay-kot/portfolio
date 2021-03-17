@@ -1,5 +1,8 @@
 export default {
   target: "static",
+  generate: {
+    crawler: true,
+  },
 
   head: {
     title: "hay-kot.dev",
