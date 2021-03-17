@@ -9,16 +9,16 @@ export default {
       {
         hid: "description",
         name: "description",
-        content: process.env.npm_package_description || ""
-      }
+        content: process.env.npm_package_description || "",
+      },
     ],
     link: [
       { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css?family=Nunito+Sans:400,700"
-      }
-    ]
+        href: "https://fonts.googleapis.com/css?family=Nunito+Sans:400,700",
+      },
+    ],
   },
 
   css: [],
@@ -30,24 +30,24 @@ export default {
   buildModules: ["@nuxtjs/tailwindcss", "@aceforth/nuxt-optimized-images"],
 
   optimizedImages: {
-    optimizeImages: true
+    optimizeImages: true,
   },
 
   modules: [
     "@nuxtjs/axios",
     "@nuxt/content",
-    ["vue-scrollto/nuxt", { duration: 500, easing: "ease" }]
+    ["vue-scrollto/nuxt", { duration: 500, easing: "ease" }],
   ],
 
   content: {
     markdown: {
       prism: {
-        theme: "prism-themes/themes/prism-material-oceanic.css"
-      }
-    }
+        theme: "prism-themes/themes/prism-material-oceanic.css",
+      },
+    },
   },
 
   axios: {},
 
-  build: {}
+  build: {},
 };
