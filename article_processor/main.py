@@ -3,35 +3,40 @@ from datetime import datetime
 from pathlib import Path
 
 from jinja2 import Template
+from pydantic.main import BaseModel
 from slugify import slugify
 
-from article import Article
+from article_processor.article import Article
 
-CWD = Path(__file__).parent
-DRAFTS = CWD.parent.joinpath("drafts")
-POST_TEMPLATE = CWD.joinpath("post-template.j2")
+CWD: Path = Path(__file__).parent
 
-# Destionations in Nuxt
-SITE = CWD.parent.joinpath("site")
-PUBLISHED_DIR = SITE.joinpath("content")
-ASSET_DIR = SITE.joinpath("static")
 
-WPM = 300
-WORD_LENGTH = 5
+class Settings(BaseModel):
+    DRAFTS: Path = CWD.parent.joinpath("drafts")
+    POST_TEMPLATE: Path = CWD.joinpath("post-template.j2")
+
+    # Destionations in Nuxt
+    SITE: Path = CWD.parent.joinpath("site")
+    PUBLISHED_DIR: Path = SITE.joinpath("content")
+    ASSET_DIR: Path = SITE.joinpath("static")
+
+    WPM: int = 300
+    WORD_LENGTH: int = 5
+
+
+settings = Settings()
 
 
 def estimate_reading_time(text):
-    total_words = 0
-    for current_text in text:
-        total_words += len(current_text) / WORD_LENGTH
-    total_time = round((total_words / WPM))
+    total_words = sum(len(current_text) / settings.WORD_LENGTH for current_text in text)
+    total_time = round((total_words / settings.WPM))
     return f"{total_time} Minute Read"
 
 
 def set_destination(article: Article) -> Path:
     timestamp = article.metadata.date.strftime("%Y-%m-%d")
     post_slug = article.metadata.slug
-    return PUBLISHED_DIR.joinpath(f"{timestamp}-{post_slug}.md")
+    return settings.PUBLISHED_DIR.joinpath(f"{timestamp}-{post_slug}.md")
 
 
 def write_metadata(article: Article):
@@ -47,7 +52,7 @@ def write_metadata(article: Article):
 
 
 def write_article(article: Article):
-    with open(POST_TEMPLATE, "r") as f:
+    with open(settings.POST_TEMPLATE, "r") as f:
         template = Template(f.read())
 
     content = template.render(article=article.dict())
@@ -64,7 +69,7 @@ def set_assett_reference(article: Article, file_name):
 
 
 def copy_assets(article: Article, src: Path):
-    dest = ASSET_DIR.joinpath(article.metadata.slug)
+    dest = settings.ASSET_DIR.joinpath(article.metadata.slug)
     dest.mkdir(parents=True, exist_ok=True)
     for file in src.glob("*.*"):
         if file.suffix != ".md":
@@ -85,7 +90,7 @@ if __name__ == "__main__":
     print("--- Starting Publishing Articles ---")
     print("\n")
 
-    for draft in DRAFTS.iterdir():
+    for draft in settings.DRAFTS.iterdir():
         if draft.name == "template":
             continue
         if draft.joinpath("draft.md").exists() == True:

@@ -19,8 +19,8 @@
           <div class="flex pr-6">
             <div>Mealie</div>
             <p class="ml-auto">
-              <a :href="mealieDocs">Docs</a> ·
-              <a :href="mealie">Source Code</a>
+              <a :href="mealie.docs">Docs</a> ·
+              <a :href="mealie.sourceCode">Source Code</a>
             </p>
           </div>
           <div class="text-lg text-gray-600">
@@ -50,7 +50,13 @@
           </div>
         </li>
         <li class="checkmark">
-          <div>Quick Zip (Beta)</div>
+          <div class="flex pr-6">
+            <div>Quick Zip (Beta)</div>
+            <p class="ml-auto">
+              <a :href="quickZipCLI.docs">Docs</a> ·
+              <a :href="quickZipCLI.sourceCode">Source Code</a>
+            </p>
+          </div>
           <div class="text-lg text-gray-600">
             A CLI interface for creating and scheduling zip file backups of
             system documents
@@ -68,8 +74,8 @@ export default {
   data() {
     return {
       mealie: projects.mealie,
-      mealieDocs: projects.mealieDocs,
       visio2PDF: projects.visio2PDF,
+      quickZipCLI: projects.quickZipCLI,
     };
   },
 };

@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "article-processor"
+name = "article_processor"
 version = "0.1.0"
 description = ""
 authors = ["hay-kot <hay-kot@pm.me>"]

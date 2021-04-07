@@ -4,7 +4,7 @@ from typing import Optional
 
 from pydantic import BaseModel
 
-from frontmatter import Frontmatter
+from article_processor.frontmatter import Frontmatter
 
 
 class MetaData(BaseModel):
