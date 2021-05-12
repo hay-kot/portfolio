@@ -18,7 +18,9 @@
 </template>
 
 <script>
+import Vue from "vue";
 import "~/assets/css/github-markdown.css";
+import AppCopyButton from "~/components/AppCopyButton";
 import { format } from "date-fns";
 
 export default {
@@ -33,6 +35,16 @@ export default {
       postInMarkdown,
     };
   },
+  mounted() {
+    setTimeout(() => {
+      const blocks = document.getElementsByClassName("nuxt-content-highlight");
+      for (const block of blocks) {
+        const CopyButton = Vue.extend(AppCopyButton);
+        const component = new CopyButton().$mount();
+        block.appendChild(component.$el);
+      }
+    }, 100);
+  },
   computed: {
     dateFormatted() {
       return format(new Date(this.postInMarkdown.date), "MMMM d, Y");
@@ -42,6 +54,10 @@ export default {
 </script>
 
 <style>
+.nuxt-content-highlight {
+  position: relative;
+}
+
 .markdown-body {
   box-sizing: border-box;
   min-width: 200px;

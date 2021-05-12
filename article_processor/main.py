@@ -93,8 +93,8 @@ if __name__ == "__main__":
     for draft in settings.DRAFTS.iterdir():
         if draft.name == "template":
             continue
-        if draft.joinpath("draft.md").exists() == True:
-            article = Article.from_file(draft.joinpath("draft.md"))
+        if draft.is_file():
+            article = Article.from_file(draft)
             if article.metadata.publish:
                 publish_article(article, draft)
                 print(f"Publishing: {article.metadata.title}")

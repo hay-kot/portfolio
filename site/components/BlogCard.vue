@@ -1,10 +1,5 @@
 <template>
   <div class="w-full h-full">
-    <img
-      class="h-48 flex-none bg-cover rounded-t mx-auto object-fill"
-      :src="image"
-      title="River"
-    />
     <div
       class="bg-background-primary border-green-900 rounded-b lg:rounded-b-none p-4"
     >

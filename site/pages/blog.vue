@@ -1,9 +1,11 @@
 <template>
   <div>
-    <div
-      class="container mx-auto p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-10 items-stretch border-b border-t border-green-900 mb-10"
-    >
-      <div v-for="(post, index) in posts" :key="index" class="post">
+    <div class="mx-auto border-b border-t border-green-900 mb-10 pb-10">
+      <div
+        v-for="(post, index) in posts"
+        :key="index"
+        class="container-inner post max-w-3xl mx-auto"
+      >
         <BlogCard
           :slug="post.slug"
           :title="post.title"
@@ -65,15 +67,15 @@ export default {
       // ! Why Doesn't This Work?
       switch (this.windowWidth) {
         case this.windowWidth <= this.smBreakpoint:
-          return 4;
+          return 12;
         case this.windowWidth <= this.mdBreakpoint:
-          return 4;
+          return 12;
         case this.windowWidth <= this.lgBreakpoint:
-          return 4;
+          return 12;
         case this.windowWidth <= this.xlBreakpoint:
-          return 4;
+          return 12;
         default:
-          return 3;
+          return 12;
       }
     },
     totalPages() {
