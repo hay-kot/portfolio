@@ -118,14 +118,14 @@
     </div>
     <footer class="bg-green-700 text-white -mt-1">
       <div
-        class="container mx-auto flex flex-col lg:flex-row items-center justify-between py-8"
+        class="container mx-auto flex flex-col lg:flex-row items-center py-8"
       >
-        <div class="mb-8 lg:mb-0">
+        <div class="mb-8 lg:mb-0 md:absolute">
           <div>
             Copyright {{ new Date().getFullYear() }}. All rights reserved.
           </div>
         </div>
-        <ul class="flex items-center space-x-8">
+        <ul class="flex items-center space-x-8 mx-auto">
           <li>
             <a :href="`mailto:${email}`" class="text-white hover:text-gray-400">
               <svg

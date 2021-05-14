@@ -5,7 +5,7 @@ date: 2021-05-11 21:16:28.812566
 summary: Today I learned you can setup a pre-commit hook to keep you from committing your secrets to source control.
 reading_time: 1 Minute Read
 tags: ['TIL', 'Ansible', 'Homelab']
-image: /til-securing-your-ansible-vault/
+image: /til-securing-your-ansible-vault/ansible-logo.png
 ---
 
 Credit for this little trick goes to Ironic Badger's Ansible [github repository](https://github.com/IronicBadger/infra/blob/master/git-init.sh). Which he has stolen from someone else! 

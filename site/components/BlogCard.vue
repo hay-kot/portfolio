@@ -1,5 +1,10 @@
 <template>
-  <div class="w-full h-full">
+  <div class="w-full h-full md:flex md:row mt-2 md:mt-0">
+    <img
+      class="m-auto rounded h-52 md:object-cover md:w-52"
+      :src="image"
+      alt=""
+    />
     <div
       class="bg-background-primary border-green-900 rounded-b lg:rounded-b-none p-4"
     >
