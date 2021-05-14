@@ -35,12 +35,16 @@ fi
 chmod +x .git/hooks/pre-commit
 ```
 
-## Additional Tip
+<call-out-box tip>
 
-Use a makefile for easily running your Ansible playbook from the command line without trying in your password. Use the entry below and create a file with your vault password in `.value-password`.
+Use a makefile for easily running your Ansible playbook from the command line without typing in your password. Use the entry below and create a file with your vault password in `.value-password`.
+
+
 
 ```makefile
 remote:
 	ansible-playbook ansible/playbook.remote.yml --vault-password-file .vault-password
 
 ```
+
+</call-out-box>
