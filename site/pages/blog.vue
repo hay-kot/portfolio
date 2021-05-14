@@ -4,9 +4,10 @@
       <div
         v-for="(post, index) in posts"
         :key="index"
-        class="container-inner post max-w-3xl mx-auto"
+        class="mx-auto container-inner"
       >
         <BlogCard
+        class="my-2"
           :slug="post.slug"
           :title="post.title"
           :summary="post.summary"
