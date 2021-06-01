@@ -1,9 +1,11 @@
 <template>
   <li class="checkmark">
-    <div class="flex pr-6">
-      <div class="w-full">{{ title }}</div>
+    <div class="md:flex pr-6">
+      <div class="w-full">
+        {{ title }}
+      </div>
       <div class="flex w-full">
-        <div class="ml-auto mr-2 flex">
+        <div class="md:ml-auto mr-2 flex">
           <img
             v-if="pythonLogo"
             src="~assets/img/code/python-logo.svg"
