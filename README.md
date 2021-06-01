@@ -1,5 +1,7 @@
 # Nuxt Portfolio Starter
 
+Deployed with Docker and Github Actions CI/CD
+
 [See it Live!](https://hay-kot.dev)
 
 ![](./website.png)
