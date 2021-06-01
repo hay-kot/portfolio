@@ -28,7 +28,7 @@ The Article Processor does the following:
 - [x] Image Optimization
 - [x] Fix Domain Issues
 - [x] Indicate Read Time for Posts
-- [ ] Custom Markdown Elements
+- [x] Custom Markdown Elements
 - [x] Tags for posts
+- [x] Response Pagination for blog posts
 - [ ] Search posts with [Fuse.js](https://fusejs.io) and [vue-fuse](https://github.com/shayneo/vue-fuse)
-- [ ] Response Pagination for blog posts

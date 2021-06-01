@@ -8,6 +8,9 @@ export const contact = {
 
 export const projects = {
   visio2PDF: "https://github.com/hay-kot/Visio2PDF",
+  goGitter: {
+    sourceCode: "https://github.com/hay-kot/GoGitter",
+  },
   mealie: {
     docs: "https://hay-kot.github.io/mealie/",
     sourceCode: "https://github.com/hay-kot/mealie",

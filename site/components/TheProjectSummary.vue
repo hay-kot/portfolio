@@ -15,53 +15,40 @@
       </div>
 
       <ul class="text-lg sm:text-xl space-y-6">
-        <li class="checkmark">
-          <div class="flex pr-6">
-            <div>Mealie</div>
-            <p class="ml-auto">
-              <a :href="mealie.docs">Docs</a> ·
-              <a :href="mealie.sourceCode">Source Code</a>
-            </p>
-          </div>
-          <div class="text-lg text-gray-600">
-            a self hosted recipe manager and meal planner with a RestAPI backend
+        <ProjectListItem
+          title="Mealie"
+          pythonLogo
+          vueLogo
+          :docs="mealie.docs"
+          :source="mealie.sourceCode"
+          description="a self hosted recipe manager and meal planner with a RestAPI backend
             and a reactive frontend application built in Vue for a pleasant user
-            experience for the whole family.
-          </div>
-        </li>
-        <li class="checkmark">
-          <div class="flex pr-6">
-            <div>Visio2PDF</div>
-
-            <p class="ml-auto">
-              <a :href="visio2PDF">Source Code</a>
-            </p>
-          </div>
-          <div class="text-lg text-gray-600">
-            A Web App wrapper around the CLI tool for converting Visio documents
-            into PDFs with merge, title page, and bookmarks built-in.
-          </div>
-        </li>
-        <li class="checkmark">
-          <div>ControlsCoPilot</div>
-          <div class="text-lg text-gray-600">
-            A line of business application built for Johnson Controls tooling
-            for automating daily workflows for system technicians and engineers.
-          </div>
-        </li>
-        <li class="checkmark">
-          <div class="flex pr-6">
-            <div>Quick Zip (Beta)</div>
-            <p class="ml-auto">
-              <a :href="quickZipCLI.docs">Docs</a> ·
-              <a :href="quickZipCLI.sourceCode">Source Code</a>
-            </p>
-          </div>
-          <div class="text-lg text-gray-600">
-            A CLI interface for creating and scheduling zip file backups of
-            system documents
-          </div>
-        </li>
+            experience for the whole family."
+        />
+        <ProjectListItem
+          title="ControlsCoPilot"
+          pythonLogo
+          description="A line of business application built for Johnson Controls tooling
+            for automating daily workflows for system technicians and engineers. Includes working 
+            with excel, converting and packaging visio files, working with custom file formats,
+            and generating custom reports."
+        />
+        <ProjectListItem
+          title="GoGitter"
+          goLogo
+          :source="goGitter.sourceCode"
+          description="A Tiny go application that uses a configuration file and to pull down your
+          private and public Github Repositiroes with optional sorting into language type 
+          directors and experimental hooks that execute in the repo directory"
+        />
+        <ProjectListItem
+          title="Visio2PDF"
+          pythonLogo
+          vueLogo
+          :source="visio2PDF"
+          description="A Web App wrapper around the CLI tool for converting Visio documents
+            into PDFs with merge, title page, and bookmarks built-in."
+        />
       </ul>
     </div>
     <!-- end projects -->
@@ -69,13 +56,16 @@
 </template>
 
 <script>
+import ProjectListItem from "./ProjectListItem";
 import { projects } from "../globals";
 export default {
+  components: { ProjectListItem },
   data() {
     return {
       mealie: projects.mealie,
       visio2PDF: projects.visio2PDF,
       quickZipCLI: projects.quickZipCLI,
+      goGitter: projects.goGitter,
     };
   },
 };
