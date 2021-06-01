@@ -38,8 +38,8 @@
           goLogo
           :source="goGitter.sourceCode"
           description="A Tiny go application that uses a configuration file and to pull down your
-          private and public Github Repositiroes with optional sorting into language type 
-          directors and experimental hooks that execute in the repo directory"
+          private and public Github repositories with optional sorting into language type 
+          directories and experimental hooks that execute in the repositories local directory"
         />
         <ProjectListItem
           title="Visio2PDF"
