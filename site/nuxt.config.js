@@ -27,7 +27,10 @@ export default {
   css: [],
 
   plugins: [],
-
+  modules: ["vue-plausible"],
+  plausible: {
+    domain: "hay-kot.dev",
+  },
   components: true,
 
   buildModules: ["@nuxtjs/tailwindcss", "@aceforth/nuxt-optimized-images"],
