@@ -30,6 +30,7 @@ export default {
   modules: ["vue-plausible"],
   plausible: {
     domain: "hay-kot.dev",
+    trackLocalhost: false,
   },
   components: true,
 
