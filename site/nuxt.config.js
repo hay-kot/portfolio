@@ -27,10 +27,9 @@ export default {
   css: [],
 
   plugins: [],
-  modules: ["vue-plausible"],
   plausible: {
     domain: "hay-kot.dev",
-    trackLocalhost: false,
+    trackLocalhost: true,
   },
   components: true,
 
@@ -41,6 +40,7 @@ export default {
   },
 
   modules: [
+    "vue-plausible",
     "@nuxtjs/axios",
     "@nuxt/content",
     ["vue-scrollto/nuxt", { duration: 500, easing: "ease" }],
