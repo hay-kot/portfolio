@@ -38,7 +38,11 @@ export default {
   },
   components: true,
 
-  buildModules: ["@nuxtjs/tailwindcss", "@aceforth/nuxt-optimized-images"],
+  buildModules: [
+    "@nuxtjs/tailwindcss",
+    "@aceforth/nuxt-optimized-images",
+    "@nuxtjs/pwa",
+  ],
 
   optimizedImages: {
     optimizeImages: true,
