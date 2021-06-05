@@ -36,6 +36,9 @@ export default {
       title: postInMarkdown.title,
       templateTitle: "%name% | %title%",
       description: postInMarkdown.summary,
+      og: {
+        image: postInMarkdown.image,
+      },
     });
 
     return {

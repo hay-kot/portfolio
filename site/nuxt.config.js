@@ -56,6 +56,9 @@ export default {
     description: "<description default>",
     canonical: "auto",
     isForcedTrailingSlash: false,
+    og: {
+      image: "<default image>",
+    },
     //...
   },
 
