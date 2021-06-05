@@ -40,7 +40,6 @@ export const getSiteMeta = function (meta) {
       content: (meta && meta.mainImage) || mainImage,
     },
     {
-      hid: "twitter:card",
       name: "twitter:card",
       content: (meta && meta.twitterCard) || twitterCard,
     },
