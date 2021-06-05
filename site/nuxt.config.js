@@ -1,5 +1,6 @@
 export default {
   target: "static",
+  ssr: true,
   generate: {
     crawler: true,
   },
@@ -13,6 +14,11 @@ export default {
         hid: "description",
         name: "description",
         content: process.env.npm_package_description || "",
+      },
+      {
+        hid: "twitter:card",
+        name: "twitter:card",
+        content: "summary_large_image",
       },
     ],
     link: [
