@@ -35,7 +35,6 @@ export default {
   plugins: [],
   plausible: {
     domain: "hay-kot.dev",
-    trackLocalhost: true,
   },
   components: true,
 
