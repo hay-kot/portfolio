@@ -40,11 +40,24 @@ export default {
   },
 
   modules: [
+    "nuxt-seo",
     "vue-plausible",
     "@nuxtjs/axios",
     "@nuxt/content",
     ["vue-scrollto/nuxt", { duration: 500, easing: "ease" }],
   ],
+
+  seo: {
+    // Module options
+    baseUrl: "https://hay-kot.dev",
+    name: "hay-kot.dev",
+    title: "<title default>",
+    templateTitle: "%name% - %title%",
+    description: "<description default>",
+    canonical: "auto",
+    isForcedTrailingSlash: false,
+    //...
+  },
 
   content: {
     markdown: {

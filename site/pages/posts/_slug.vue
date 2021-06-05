@@ -31,6 +31,13 @@ export default {
         console.error(err);
       });
 
+    ctx.seo({
+      name: "Blog",
+      title: postInMarkdown.title,
+      templateTitle: "%name% | %title%",
+      description: postInMarkdown.summary,
+    });
+
     return {
       postInMarkdown,
     };
