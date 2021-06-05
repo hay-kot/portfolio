@@ -24,7 +24,7 @@ import AppCopyButton from "~/components/AppCopyButton";
 import { format } from "date-fns";
 
 export default {
-  async asyncData({ $content, params, $axios }) {
+  async asyncData({ $content, params, $axios, ctx }) {
     const postInMarkdown = await $content(params.slug)
       .fetch()
       .catch((err) => {
