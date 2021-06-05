@@ -24,22 +24,21 @@ import AppCopyButton from "~/components/AppCopyButton";
 import { format } from "date-fns";
 
 export default {
-  async asyncData({ $content, params, $axios, ctx }) {
+  head() {
+    return {
+      title: this.postInMarkdown.title,
+      meta: [
+        { property: "og:title", content: this.postInMarkdown.title },
+        { property: "og:image", content: this.postInMarkdown.image },
+      ],
+    };
+  },
+  async asyncData({ $content, params, $axios }) {
     const postInMarkdown = await $content(params.slug)
       .fetch()
       .catch((err) => {
         console.error(err);
       });
-
-    ctx.seo({
-      name: "Blog",
-      title: postInMarkdown.title,
-      templateTitle: "%name% | %title%",
-      description: postInMarkdown.summary,
-      og: {
-        image: postInMarkdown.image,
-      },
-    });
 
     return {
       postInMarkdown,
