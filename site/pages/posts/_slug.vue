@@ -21,18 +21,10 @@
 import Vue from "vue";
 import "~/assets/css/github-markdown.css";
 import AppCopyButton from "~/components/AppCopyButton";
+import { getSiteMeta } from "~/utils/getSiteMeta";
 import { format } from "date-fns";
 
 export default {
-  head() {
-    return {
-      title: this.postInMarkdown.title,
-      meta: [
-        { property: "og:title", content: this.postInMarkdown.title },
-        { property: "og:image", content: this.postInMarkdown.image },
-      ],
-    };
-  },
   async asyncData({ $content, params, $axios }) {
     const postInMarkdown = await $content(params.slug)
       .fetch()
@@ -55,9 +47,53 @@ export default {
     }, 100);
   },
   computed: {
+    meta() {
+      const metaData = {
+        type: "article",
+        title: this.postInMarkdown.title,
+        description: this.postInMarkdown.summary,
+        url: `https://hay-kot.dev/posts/${this.$route.params.slug}`,
+        mainImage: this.postInMarkdown.image,
+      };
+      return getSiteMeta(metaData);
+    },
     dateFormatted() {
       return format(new Date(this.postInMarkdown.date), "MMMM d, Y");
     },
+  },
+  head() {
+    return {
+      title: this.postInMarkdown.title,
+      meta: [
+        ...this.meta,
+        {
+          property: "article:published_time",
+          content: this.postInMarkdown.date,
+        },
+        {
+          property: "article:tag",
+          content: this.postInMarkdown.tags
+            ? this.postInMarkdown.tags.toString()
+            : "",
+        },
+        { name: "twitter:label1", content: "Written by" },
+        { name: "twitter:data1", content: "David Parks" },
+        { name: "twitter:label2", content: "Filed under" },
+        {
+          name: "twitter:data2",
+          content: this.postInMarkdown.tags
+            ? this.postInMarkdown.tags.toString()
+            : "",
+        },
+      ],
+      link: [
+        {
+          hid: "canonical",
+          rel: "canonical",
+          href: `https://hay-kot.dev/posts/${this.$route.params.slug}`,
+        },
+      ],
+    };
   },
 };
 </script>
