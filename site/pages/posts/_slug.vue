@@ -77,8 +77,7 @@ export default {
             : "",
         },
         { name: "twitter:label1", content: "Written by" },
-        { name: "twitter:data1", content: "David Parks" },
-        { name: "twitter:label2", content: "Filed under" },
+        { name: "twitter:data1", content: "hay-kot" },
         {
           name: "twitter:data2",
           content: this.postInMarkdown.tags
