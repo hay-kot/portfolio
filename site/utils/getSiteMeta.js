@@ -4,7 +4,7 @@ const title = "hay-kot";
 const description =
   "Hayden is a Building Automation Engineer at Johnson Controls. While not a programmer by trade, Hayden spends his free time contributing to open source projects and building utility applications to support the community.";
 const mainImage = "https://hay-kot.dev/_nuxt/img/39d706a.svg";
-const twitterSite = "@hay_kot";
+const twitterSite = "@kot_hay";
 const twitterCard = "summary_large_image";
 
 export const getSiteMeta = function (meta) {
@@ -37,7 +37,7 @@ export const getSiteMeta = function (meta) {
     {
       hid: "og:image",
       property: "og:image",
-      content: (meta && meta.image) || mainImage,
+      content: (meta && meta.mainImage) || mainImage,
     },
     {
       hid: "twitter:url",
@@ -57,7 +57,7 @@ export const getSiteMeta = function (meta) {
     {
       hid: "twitter:image",
       name: "twitter:image",
-      content: (meta && meta.image) || mainImage,
+      content: (meta && meta.mainImage) || mainImage,
     },
     {
       hid: "twitter:site",

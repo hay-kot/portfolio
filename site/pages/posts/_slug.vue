@@ -53,7 +53,7 @@ export default {
         title: this.postInMarkdown.title,
         description: this.postInMarkdown.summary,
         url: `https://hay-kot.dev/posts/${this.$route.params.slug}`,
-        mainImage: this.postInMarkdown.image,
+        mainImage: "https://hay-kot.dev/" + this.postInMarkdown.image,
       };
       return getSiteMeta(metaData);
     },
