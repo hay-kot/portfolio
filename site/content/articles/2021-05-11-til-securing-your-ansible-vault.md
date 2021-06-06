@@ -1,7 +1,7 @@
 ---
 title: TIL Securing Your Ansible Vault
 path: /til-securing-your-ansible-vault
-date: 2021-05-11 21:16:28.812566
+date: 2021-05-11
 summary: Today I learned you can setup a pre-commit hook to keep you from committing your secrets to source control.
 reading_time: 1 Minute Read
 tags: ['TIL', 'ansible', 'homelab']

@@ -1,6 +1,6 @@
 export default {
   target: "static",
-  ssr: true,
+
   generate: {
     crawler: true,
   },
@@ -44,14 +44,22 @@ export default {
     "@nuxtjs/pwa",
   ],
 
+  pwa: {
+    manifest: {
+      name: "hay-kot.dev",
+      description: "hay-kot Portfolio",
+      theme_color: "#30855A",
+    },
+  },
+
   optimizedImages: {
     optimizeImages: true,
   },
 
   modules: [
     "vue-plausible",
-    "@nuxtjs/axios",
     "@nuxt/content",
+    "@nuxtjs/axios",
     ["vue-scrollto/nuxt", { duration: 500, easing: "ease" }],
   ],
 

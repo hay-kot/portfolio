@@ -1,7 +1,7 @@
 ---
 title: Mealie - Reflecting on my First "Real" Project
 path: /reflecting-on-my-first-real-project
-date: 2021-01-02T23:25:31.000+00:00
+date: 2021-01-02
 summary: This is short blog post on my first "real" programming project, and what I learned through the process.
 reading_time: 
 tags: ['coding', 'frontend', 'vue']

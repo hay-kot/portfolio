@@ -25,8 +25,8 @@ import { getSiteMeta } from "~/utils/getSiteMeta";
 import { format } from "date-fns";
 
 export default {
-  async asyncData({ $content, params, $axios }) {
-    const postInMarkdown = await $content(params.slug)
+  async asyncData({ $content, params }) {
+    const postInMarkdown = await $content("articles", params.slug)
       .fetch()
       .catch((err) => {
         console.error(err);

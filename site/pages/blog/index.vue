@@ -7,7 +7,7 @@
         class="mx-auto container-inner"
       >
         <BlogCard
-        class="my-2"
+          class="my-2"
           :slug="post.slug"
           :title="post.title"
           :summary="post.summary"
@@ -24,7 +24,8 @@
       <a
         :href="previousPage"
         :class="{
-          'text-gray-400 hover:text-gray-400 cursor-not-allowed': !showPreviousPage,
+          'text-gray-400 hover:text-gray-400 cursor-not-allowed':
+            !showPreviousPage,
         }"
       >
         &larr; Prev
@@ -46,42 +47,38 @@
 
 <script>
 import { format } from "date-fns";
-import tailwindConfig from "../tailwind.config.js";
 
 export default {
   data() {
     return {
-      posts: [],
       currentPage: 1,
-      allPosts: [],
       base: "/blog",
       windowWidth: 0,
       menuOpen: false,
-      smBreakpoint: Number(tailwindConfig.theme.screens.sm.replace("px", "")),
-      mdBreakpoint: Number(tailwindConfig.theme.screens.md.replace("px", "")),
-      lgBreakpoint: Number(tailwindConfig.theme.screens.lg.replace("px", "")),
-      xlBreakpoint: Number(tailwindConfig.theme.screens.xl.replace("px", "")),
     };
   },
+  watchQuery: ["page"],
+  async asyncData({ $content, route }) {
+    const allPosts = await $content("articles").fetch();
+    let currentPage = parseInt(route.query.page)
+      ? parseInt(route.query.page)
+      : 1;
+
+    const totalPages = Math.ceil(allPosts.length / 12);
+
+    if (currentPage > totalPages) {
+      route.query.page = 1;
+    }
+
+    const posts = await $content("articles")
+      .sortBy("date", "desc")
+      .limit(12)
+      .skip((currentPage - 1) * 12)
+      .fetch();
+
+    return { posts, allPosts, currentPage, totalPages };
+  },
   computed: {
-    pagination() {
-      // ! Why Doesn't This Work?
-      switch (this.windowWidth) {
-        case this.windowWidth <= this.smBreakpoint:
-          return 12;
-        case this.windowWidth <= this.mdBreakpoint:
-          return 12;
-        case this.windowWidth <= this.lgBreakpoint:
-          return 12;
-        case this.windowWidth <= this.xlBreakpoint:
-          return 12;
-        default:
-          return 12;
-      }
-    },
-    totalPages() {
-      return Math.ceil(this.allPosts.length / this.pagination);
-    },
     showPreviousPage() {
       return this.currentPage !== 1;
     },
@@ -96,7 +93,7 @@ export default {
     nextPage(currentPage, totalPages) {
       return this.totalPages > this.currentPage
         ? `${this.base}?page=${this.currentPage + 1}`
-        : `${this.base}?page=${this.currentPage}`;
+        : null;
     },
   },
   mounted() {
@@ -114,24 +111,5 @@ export default {
       return format(new Date(dateToFormat), "MMM d, Y");
     },
   },
-  async fetch() {
-    this.allPosts = await this.$content().fetch();
-
-    this.currentPage = parseInt(this.$route.query.page)
-      ? parseInt(this.$route.query.page)
-      : 1;
-
-    if (this.currentPage > this.totalPages) {
-      this.$router.push("/blog");
-      window.location.href = "/blog";
-    }
-
-    this.posts = await this.$content()
-      .sortBy("date", "desc")
-      .limit(this.pagination)
-      .skip((this.currentPage - 1) * this.pagination)
-      .fetch();
-  },
-  fetchOnServer: false,
 };
 </script>

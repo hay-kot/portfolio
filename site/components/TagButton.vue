@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nuxt-link :to="`/tag/${tag}`" class="bg-primary-color rounded-full pr-3">
+    <nuxt-link :to="`/blog/tags/${tag}`" class="bg-primary-color rounded-full pr-3">
       {{ titleCase(tag) }}
     </nuxt-link>
   </div>

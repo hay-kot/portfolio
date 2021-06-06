@@ -1,7 +1,7 @@
 ---
 title: TIL Converting Visio to PDFs Recursively
 path: /til-you-can-use-powershell-to-recursively-convert-visio-files-to-pdfs
-date: 2021-06-05 14:12:24.235978
+date: 2021-06-05
 summary: Today I learned that you can use powershell on windows to recursively convert visio files to PDF files.
 reading_time: 1 Minute Read
 tags: ['TIL', 'automation', 'powershell', 'windows']

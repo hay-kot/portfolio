@@ -6,11 +6,17 @@
       alt=""
     />
     <div
-      class="bg-background-primary border-green-900 rounded-b lg:rounded-b-none p-4"
+      class="
+        bg-background-primary
+        border-green-900
+        rounded-b
+        lg:rounded-b-none
+        p-4
+      "
     >
       <div class="mb-4">
         <h2 class="text-2xl font-bold">
-          <nuxt-link :to="`/posts/${slug}`" class="text-copy-primary">
+          <nuxt-link :to="`/blog/${slug}`" class="text-copy-primary">
             {{ title }}
           </nuxt-link>
         </h2>
@@ -41,7 +47,7 @@
           <p class="text-gray-600">{{ date }}</p>
         </div>
         <div class="ml-auto mt-auto">
-          <nuxt-link :to="`/posts/${slug}`" class="font-bold uppercase">
+          <nuxt-link :to="`/blog/${slug}`" class="font-bold uppercase">
             Read More
           </nuxt-link>
         </div>

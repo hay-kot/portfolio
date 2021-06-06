@@ -26,7 +26,8 @@
       <a
         :href="previousPage"
         :class="{
-          'text-gray-400 hover:text-gray-400 cursor-not-allowed': !showPreviousPage,
+          'text-gray-400 hover:text-gray-400 cursor-not-allowed':
+            !showPreviousPage,
         }"
       >
         &larr; Prev
@@ -65,7 +66,7 @@ export default {
   },
   computed: {
     base() {
-      return `/tag/${this.tag}`;
+      return `blog/tags/${this.tag}`;
     },
     tag() {
       return this.$route.params.tag;
@@ -84,7 +85,7 @@ export default {
     showNextPage() {
       return this.currentPage !== this.totalPages;
     },
-    nextPage(currentPage, totalPages) {
+    nextPage() {
       return this.totalPages > this.currentPage
         ? `${this.base}?page=${this.currentPage + 1}`
         : `${this.base}?page=${this.currentPage}`;
@@ -95,7 +96,7 @@ export default {
       return format(new Date(dateToFormat), "MMM d, Y");
     },
     async fetchData() {
-      this.allPosts = await this.$content().fetch();
+      this.allPosts = await this.$content("articles").fetch();
       this.allPosts.filter((e) => {
         return e.tags.includes(this.tag);
       });
@@ -104,7 +105,7 @@ export default {
         ? parseInt(this.$route.query.page)
         : 1;
 
-      this.filteredPosts = await this.$content()
+      this.filteredPosts = await this.$content("articles")
         .where({ tags: { $contains: this.tag } })
         .sortBy("date", "desc")
         .limit(this.pagination)

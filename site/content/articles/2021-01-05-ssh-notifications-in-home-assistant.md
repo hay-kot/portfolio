@@ -1,7 +1,7 @@
 ---
 title: SSH Login Notifications in Home Assistant With Node-Red
 path: /ssh-notifications-in-home-assistant
-date: 2021-01-05T06:13:31.000+00:00
+date: 2021-01-05
 summary: Adding SSH logging to Home Assistant is super easy to do and can offer a tiny sliver of reassurance that your whole system isn't burning down by an unauthorized user.
 reading_time: 
 tags: ['automation', 'home assistant']

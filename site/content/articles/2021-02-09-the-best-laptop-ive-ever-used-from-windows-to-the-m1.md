@@ -1,7 +1,7 @@
 ---
 title: From Windows to M1
 path: /the-best-laptop-ive-ever-used-from-windows-to-the-m1
-date: 2021-02-12T06:08:42.000+00:00
+date: 2021-02-12
 summary: As a long time, diehard Windows fan it slightly pains me to say that the M1 MacBook Air is by far the greatest laptop I've ever used. I adamantly refused to buy into the MacOS ecosystem but after weeks of being undecided on a new laptop I finally caved and took the plunge into the MacBook Air.
 reading_time: 
 tags: ['tech', 'mac', 'windows']
