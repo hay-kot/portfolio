@@ -1,6 +1,6 @@
 {
   "name": "nuxt-portfolio-starter",
-  "version": "1.0.0",
+  "version": "v1.22.10",
   "private": true,
   "scripts": {
     "dev": "nuxt",
@@ -16,7 +16,9 @@
     "autoprefixer": "^10.2.5",
     "date-fns": "^2.19.0",
     "nuxt": "^2.15.3",
+    "postcss": "^8.0.0",
     "prism-themes": "^1.6.0",
+    "vue-loader": "^15.9.7",
     "vue-plausible": "^1.1.4",
     "vue-scrollto": "^2.18.2"
   },
@@ -34,6 +36,6 @@
     "imagemin-pngquant": "^9.0.2",
     "imagemin-svgo": "^9.0.0",
     "install": "^0.13.0",
-    "nuxt-vite": "^0.0.36"
+    "nuxt-vite": "^0.1.1"
   }
 }
