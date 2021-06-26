@@ -4,9 +4,6 @@ setup:
 	poetry install \
 
 dev:
-	docker-compose -f docker-compose.dev.yml -p dev-portfolio up --build
-
-dev-local:
 	cd site && yarn dev
 
 publish:
